@@ -25,9 +25,9 @@ export const getRoom = async (req, res) => {
 
 export const checkRoom = async (req, res) => {
     try {
-        const existing = await roomService.checkRoomExists(req.params.code);
+        const exists = await roomService.checkRoomExists(req.params.code);
 
-        res.status(200).json({existing});
+        res.status(200).json({exists});
 
     } catch(error) {
         res.status(404).json({message: error.message});

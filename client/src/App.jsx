@@ -5,7 +5,7 @@ import Landing from './pages/Landing/Landing.jsx'
 import Login from './pages/Login/Login.jsx'
 import Register from './pages/Register/Register.jsx'
 import Dashboard from './pages/Dashboard/Dashboard.jsx'
-//import Room from './pages/Room/Room.jsx'
+import Room from './pages/Room/Room.jsx'
 import './App.css'
 
 const ProtectedRoute = ({ children }) => {
@@ -26,7 +26,7 @@ const AppRoutes = () => (
     <Route path="/room/:code" element={
       <ProtectedRoute>
         <RoomProvider>
-          <Login />
+          <Room />
         </RoomProvider>
       </ProtectedRoute>
     } />

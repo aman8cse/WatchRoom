@@ -1,0 +1,40 @@
+.video-player {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #000;
+}
+
+#yt-player {
+  width: 100%;
+  height: 100%;
+}
+
+#yt-player iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  color: var(--text-secondary);
+}
+
+.video-placeholder span {
+  font-size: 4rem;
+}
+
+.video-placeholder p {
+  font-size: var(--text-md);
+  color: var(--text-primary);
+}
