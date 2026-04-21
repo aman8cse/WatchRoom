@@ -15,7 +15,7 @@ const Landing = () => {
       {/* Navbar */}
       <nav className="landing-nav">
         <div className="landing-logo">
-          <span className="logo-icon">🎬</span>
+          <span className="logo-icon"></span>
           <span className="logo-text">CoWatch</span>
         </div>
         <div className="landing-nav-links">
@@ -72,17 +72,17 @@ const Landing = () => {
         {/* Feature cards */}
         <div className="landing-features">
           <div className="feature-card">
-            <span className="feature-icon">⚡</span>
+            <span className="feature-icon"></span>
             <h3>Real-time Sync</h3>
             <p>Play, pause, and seek in perfect sync with everyone in the room</p>
           </div>
           <div className="feature-card">
-            <span className="feature-icon">👑</span>
+            <span className="feature-icon"></span>
             <h3>Role System</h3>
             <p>Host controls who can manage playback with moderator roles</p>
           </div>
           <div className="feature-card">
-            <span className="feature-icon">💬</span>
+            <span className="feature-icon"></span>
             <h3>Live Chat</h3>
             <p>React and chat with friends while watching together</p>
           </div>

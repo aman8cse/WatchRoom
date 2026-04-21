@@ -61,7 +61,7 @@ const Dashboard = () => {
       {/* Navbar */}
       <nav className="dashboard-nav">
         <div className="landing-logo">
-          <span>🎬</span>
+          <span></span>
           <span className="logo-text">CoWatch</span>
         </div>
         <div className="dashboard-nav-right">
@@ -85,7 +85,7 @@ const Dashboard = () => {
           {/* Create Room */}
           <div className="card dashboard-panel">
             <div className="panel-header">
-              <span className="panel-icon">🎬</span>
+              <span className="panel-icon"></span>
               <div>
                 <h2>Create a Room</h2>
                 <p className="text-secondary">You'll be the host</p>
@@ -103,7 +103,7 @@ const Dashboard = () => {
                   id="roomName"
                   type="text"
                   className="input"
-                  placeholder="e.g. Movie Night 🍿"
+                  placeholder="e.g. Movie Night"
                   value={roomName}
                   onChange={e => {
                     setRoomName(e.target.value)
@@ -118,7 +118,7 @@ const Dashboard = () => {
                 className="btn btn-primary w-full"
                 disabled={createLoading}
               >
-                {createLoading ? 'Creating...' : '🚀 Create Room'}
+                {createLoading ? 'Creating...' : 'Create Room'}
               </button>
             </form>
           </div>
@@ -126,7 +126,7 @@ const Dashboard = () => {
           {/* Join Room */}
           <div className="card dashboard-panel">
             <div className="panel-header">
-              <span className="panel-icon">🔗</span>
+              <span className="panel-icon"></span>
               <div>
                 <h2>Join a Room</h2>
                 <p className="text-secondary">Enter a room code</p>
@@ -159,7 +159,7 @@ const Dashboard = () => {
                 className="btn btn-secondary w-full"
                 disabled={joinLoading}
               >
-                {joinLoading ? 'Joining...' : '🚪 Join Room'}
+                {joinLoading ? 'Joining...' : 'Join Room'}
               </button>
             </form>
           </div>

@@ -30,7 +30,7 @@ const Room = () => {
       {/* Top bar */}
       <header className="room-header">
         <div className="room-header-left">
-          <span className="logo-text">🎬 CoWatch</span>
+          <span className="logo-text">CoWatch</span>
           <div className="room-code-badge">
             <span>{code}</span>
             <button className="btn btn-ghost btn-sm" onClick={handleCopyLink}>
