@@ -84,6 +84,7 @@ const VideoPlayer = ({ playerRef }) => {
         videoState.isPlaying
       ) {
         const currentTime = playerRef.current.getCurrentTime()
+        updateVideoState({currentTime})
         // Only update local display, don't emit socket event
         // currentTime in context updates via seek events only
       }

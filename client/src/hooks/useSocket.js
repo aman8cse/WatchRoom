@@ -25,7 +25,6 @@ const useSocket = (roomCode, playerRef) => {
     socket.emit('join_room', { roomCode })
 
     socket.on('sync_state', ({ videoState, participants, messages }) => {
-      console.log(videoState)
       updateVideoState(videoState)
       updateParticipants(participants)
 

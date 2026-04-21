@@ -60,12 +60,12 @@ const Landing = () => {
             <button className="btn btn-primary btn-lg" onClick={handleGetStarted}>
               Start Watching Free
             </button>
-            <button
+            {!user && (<button
               className="btn btn-secondary btn-lg"
               onClick={() => navigate('/login')}
             >
               I have an account
-            </button>
+            </button>)}
           </div>
         </div>
 
