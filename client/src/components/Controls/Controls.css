@@ -59,6 +59,44 @@
   transform: scale(1.2);
 }
 
+.seek-bar-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+
+.seek-bar {
+  flex: 1;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--border);
+  border-radius: var(--radius-full);
+  outline: none;
+  cursor: pointer;
+}
+
+.seek-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+.seek-bar::-webkit-slider-runnable-track {
+  background: linear-gradient(
+    to right,
+    var(--accent) 0%,
+    var(--accent) calc(var(--progress, 0%) ),
+    var(--border) calc(var(--progress, 0%))
+  );
+  border-radius: var(--radius-full);
+  height: 4px;
+}
+
 @media (max-width: 480px) {
   .controls-main {
     flex-direction: column;

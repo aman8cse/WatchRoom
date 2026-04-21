@@ -8,7 +8,8 @@ export const RoomProvider = ({ children }) => {
   const [videoState, setVideoState] = useState({
     videoId: '',
     isPlaying: false,
-    currentTime: 0
+    currentTime: 0,
+    duration: 0
   })
   const [messages, setMessages] = useState([])
   const [reactions, setReactions] = useState([])

@@ -3,7 +3,7 @@ import { useRoomContext } from '../../context/RoomContext'
 import './VideoPlayer.css'
 
 const VideoPlayer = ({ playerRef }) => {
-  const { videoState } = useRoomContext()
+  const { videoState, updateVideoState } = useRoomContext()
   const ytPlayerRef = useRef(null)
   const initializedRef = useRef(false)
 
@@ -28,7 +28,13 @@ const VideoPlayer = ({ playerRef }) => {
         events: {
           onReady: (event) => {
             playerRef.current = event.target
-            console.log('✅ YouTube player ready')
+          },
+          onStateChange: (event) => {
+            // YT.PlayerState.PLAYING = 1
+            if (event.data === 1) {
+              const duration = event.target.getDuration()
+              updateVideoState({ duration })
+            }
           },
           onError: (e) => {
             console.error('YouTube player error:', e.data)
@@ -64,9 +70,27 @@ const VideoPlayer = ({ playerRef }) => {
   // Load new video when videoId changes
   useEffect(() => {
     if (playerRef.current && videoState.videoId) {
-      playerRef.current.loadVideoById(videoState.videoId)
+      playerRef.current.cueVideoById(videoState.videoId)
     }
   }, [videoState.videoId])
+
+  useEffect(() => {
+    if (!playerRef.current) return
+
+    const interval = setInterval(() => {
+      if (
+        playerRef.current &&
+        typeof playerRef.current.getCurrentTime === 'function' &&
+        videoState.isPlaying
+      ) {
+        const currentTime = playerRef.current.getCurrentTime()
+        // Only update local display, don't emit socket event
+        // currentTime in context updates via seek events only
+      }
+    }, 1000)
+
+    return () => clearInterval(interval)
+  }, [videoState.isPlaying])
 
   return (
     <div className="video-player">
@@ -80,6 +104,7 @@ const VideoPlayer = ({ playerRef }) => {
         </div>
       )}
       <div id="yt-player" style={{ width: '100%', height: '100%' }} />
+      <div className="player-overlay" />
     </div>
   )
 }

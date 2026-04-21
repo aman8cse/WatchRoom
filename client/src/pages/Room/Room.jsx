@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useRoomContext } from '../../context/RoomContext'
-import useSocket from '../../hooks/useSocket'
+import useSocket from '../../hooks/useSocket.js'
 import useRoom from '../../hooks/useRoom'
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer'
 import Controls from '../../components/Controls/Controls'
@@ -34,7 +34,7 @@ const Room = () => {
           <div className="room-code-badge">
             <span>{code}</span>
             <button className="btn btn-ghost btn-sm" onClick={handleCopyLink}>
-              📋 Copy Link
+               Copy Link
             </button>
           </div>
         </div>

@@ -38,3 +38,10 @@
   font-size: var(--text-md);
   color: var(--text-primary);
 }
+
+.player-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: transparent;
+}
