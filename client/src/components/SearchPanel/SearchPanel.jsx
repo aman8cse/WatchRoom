@@ -10,7 +10,7 @@ const SearchPanel = ({ roomActions, onClose }) => {
   const debouncedSearch = useRef(
     debounce((q) => {
       if (q.trim() && !isYouTubeUrl(q)) searchVideos(q)
-    }, 500)
+    }, 200)
   ).current
 
   const handleInput = (e) => {
