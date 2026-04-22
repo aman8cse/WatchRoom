@@ -41,7 +41,7 @@ export const RoomProvider = ({ children }) => {
       room, setRoom,
       participants, updateParticipants,
       videoState, updateVideoState,
-      messages, addMessage,
+      messages, addMessage, setMessages,
       reactions, addReaction,
       myRole, setMyRole
     }}>

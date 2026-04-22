@@ -159,6 +159,7 @@ class MessageHandler {
     }
 
     room.updateVideoState({ videoId, isPlaying: false, currentTime: 0 })
+    console.log('vidId', videoId)
 
     // Sync to MongoDB — late joiners need the current videoId
     await RoomModel.findOneAndUpdate(

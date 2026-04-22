@@ -12,6 +12,8 @@ const useSocket = (roomCode, playerRef) => {
     updateParticipants,
     updateVideoState,
     addMessage,
+    messages,
+    setMessages,
     addReaction,
     setMyRole
   } = useRoomContext()
@@ -27,6 +29,7 @@ const useSocket = (roomCode, playerRef) => {
     socket.on('sync_state', ({ videoState, participants, messages }) => {
       updateVideoState(videoState)
       updateParticipants(participants)
+      setMessages(messages)
 
       const me = participants.find(p => p.username === user.username)
       if (me) setMyRole(me.role)
