@@ -14,8 +14,8 @@ A real-time YouTube watch party application where multiple users can watch video
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/cowatch.git
-cd cowatch
+git clone https://github.com/aman8cse/watchroom.git
+cd watchroom
 ```
 ### 2. Setup the Server
 ```bash
@@ -214,6 +214,6 @@ All permission checks happen server-side in the `Participant` class. Frontend on
 
 ##  Author
 
-**Your Name**
+**Aman Agrahari**
 - GitHub: [@aman8cse](https://github.com/aman8cse)
 - LinkedIn: [linkedin.com/in/aman-agrahari-a36357308/]
