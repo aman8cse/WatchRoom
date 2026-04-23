@@ -42,7 +42,6 @@ const Register = () => {
       <div className="auth-card">
         {/* Logo */}
         <div className="auth-logo">
-          <span>🎬</span>
           <span>CoWatch</span>
         </div>
 
